@@ -3,5 +3,6 @@ module.exports = {
     port: 8765,
     https: true,
   },
-  publicPath: './',
+  publicPath:
+    process.env.NODE_ENV === 'production' ? '/tda-api-demo-vue/' : '/',
 };
