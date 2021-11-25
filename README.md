@@ -1,4 +1,4 @@
-# tdapidemo
+# tdapidemo-vue
 
 ## Project setup
 ```
