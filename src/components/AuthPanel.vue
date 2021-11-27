@@ -25,5 +25,8 @@ export default {
       this.APIClient.authentication.logOut();
     },
   },
+  mounted() {
+    if (this.$route.query && this.$route.query.code) this.logIn();
+  },
 };
 </script>
