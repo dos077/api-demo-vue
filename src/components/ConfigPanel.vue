@@ -19,8 +19,8 @@
 export default {
   name: 'ConfigPanel',
   data: () => ({
-    clientId: null,
-    redirectUri: null,
+    clientId: '@AMER.OAUTHAP',
+    redirectUri: 'https://dos077.github.io/api-demo-vue/',
     storeAuth: false,
     logInRedirect: true,
   }),
