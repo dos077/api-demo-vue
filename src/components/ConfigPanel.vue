@@ -9,6 +9,12 @@
     <input type="checkbox" v-model="storeAuth" />
     <label>Redirect for Login</label>
     <input type="checkbox" v-model="logInRedirect" />
+    <label>scope</label>
+    <select v-model="scope" multiple size="3">
+      <option v-for="option in scopeOptions" :key="option">
+        {{ option }}
+      </option>
+    </select>
     <button @click="buildClient" value="initialize client">
       initialize client
     </button>
@@ -23,15 +29,18 @@ export default {
     redirectUri: 'https://dos077.github.io/api-demo-vue/',
     storeAuth: false,
     logInRedirect: true,
+    scopeOptions: ['PlaceTrades', 'AccountAccess', 'MoveMoney'],
+    scope: [],
   }),
   methods: {
     buildClient() {
-      const { clientId, redirectUri, storeAuth, logInRedirect } = this;
+      const { clientId, redirectUri, storeAuth, logInRedirect, scope } = this;
       this.$emit('buildClient', {
         clientId,
         redirectUri,
         storeAuth,
         logInRedirect,
+        scope,
       });
     },
   },
